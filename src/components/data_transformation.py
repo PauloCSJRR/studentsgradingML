@@ -1,7 +1,8 @@
 import sys
+from dataclasses import dataclass
+
 from pathlib import Path # type: ignore
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from dataclasses import dataclass
 
 import numpy as np 
 import pandas as pd
@@ -26,7 +27,7 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function is responsible for data trnasformation
+        This function si responsible for data trnasformation
         
         '''
         try:
@@ -63,7 +64,7 @@ class DataTransformation:
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_columns),
-                ("cat_pipeline",cat_pipeline,categorical_columns)
+                ("cat_pipelines",cat_pipeline,categorical_columns)
 
                 ]
 
